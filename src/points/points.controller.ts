@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put } from '@nestjs/common';
 import { PointsService } from './points.service';
 import { Point } from './points.interface';
 
@@ -12,10 +12,16 @@ export class PointsController {
 
   @Post()
   add(@Body() body: Point) {
-    this.pointsService.add(body);
+    const point = {
+      ...body,
+      _id: `${Math.random()}`,
+    };
+    this.pointsService.add(point);
+
+    return point;
   }
 
-  @Post()
+  @Put()
   update(@Body() body: Point) {
     this.pointsService.update(body);
   }
