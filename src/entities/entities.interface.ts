@@ -1,64 +1,6 @@
-declare type EntityTypeValue =
-  | 'router'
-  | 'internetProvider'
-  | 'accessPoint'
-  | 'videoRecorder'
-  | 'videoCamera'
-  | 'cashRegister'
-  | 'pc'
-  | 'IPTelephony';
-
 declare interface Entity {
-  type: EntityTypeValue;
+  type: string;
   pointId: string;
   _id?: string;
-  login?: string;
-  password?: string;
-  vpn?: string;
-  ip?: string;
-  mac?: string;
-  wifiName1?: string;
-  wifiName2?: string;
-  wifiPassword1?: string;
-  wifiPassword2?: string;
-  wifiFreq1?: string;
-  wifiFreq2?: string;
-  purposePort?: string;
-  providerName?: string;
-  contactNumber?: string;
-  numberOfContract?: string;
-  gateway?: string;
-  subnetMask?: string;
-  dns1?: string;
-  dns2?: string;
-  connectionType?: string;
-  purpose?: string;
-  model?: string;
-  serialNumber?: string;
-  camerasConnected?: string;
-  innerIp?: string;
-  outerIp?: string;
-  port?: string;
-  hdd?: string;
-  number?: string;
-  name?: string;
-  inventoryNumber?: string;
-  os?: string;
-  activationKey?: string;
-  fduLicense?: string;
-  anyDeskId?: string;
-  anyDeskPass?: string;
-  domain?: string;
-  znkkm?: string;
-  rnmkkm?: string;
-  user?: string;
-  phone?: string;
-  teamViewer?: string;
-  adtvPassword?: string;
-  adminPassword?: string;
-  productKey?: string;
-  operatorName?: string;
-  innerNumber?: string;
-  subId?: string;
-  sourceProxy?: string;
+  fields: Array<{ name: string; value: string }>;
 }

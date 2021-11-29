@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import FIELDS from '../constants/fields';
+import ENTITY_TYPES from '../constants/entitiyTypes';
 
 @Injectable()
 export class EntitiesService {
@@ -6,6 +8,7 @@ export class EntitiesService {
     {
       pointId: 'id1',
       type: 'router',
+      fields: [],
     },
   ];
 
